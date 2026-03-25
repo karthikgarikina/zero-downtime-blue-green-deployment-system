@@ -1,0 +1,3 @@
+ALTER TABLE IF EXISTS users
+ADD COLUMN IF NOT EXISTS phone_number TEXT,
+ADD COLUMN IF NOT EXISTS profile_picture_url TEXT;
