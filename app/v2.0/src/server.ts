@@ -96,7 +96,7 @@ app.post("/api/users", async (req: Request, res: Response) => {
 
     success(res, "User created", result.rows[0]);
   } catch {
-    error(res, "Failed to create user", 500);
+    error(res, "Failed to create user, if you applied contract then phone_number also required", 500);
   }
 });
 
@@ -138,6 +138,21 @@ app.put("/api/users/:id", async (req: Request, res: Response) => {
     success(res, "User updated", result.rows[0]);
   } catch {
     error(res, "Failed to update user", 500);
+  }
+});
+
+app.delete("/api/users/:id", async (req: Request, res: Response) => {
+  try {
+    const result = await pool.query(
+      "DELETE FROM users WHERE id=$1 RETURNING *",
+      [req.params.id]
+    );
+
+    if (!result.rows.length) return error(res, "User not found", 404);
+
+    success(res, "User deleted");
+  } catch {
+    error(res, "Failed to delete user", 500);
   }
 });
 
