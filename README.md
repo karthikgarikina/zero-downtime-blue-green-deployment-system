@@ -30,7 +30,7 @@ It ensures:
 ### 1. Clone Repository
 
 ``` bash
-git clone 
+git clone https://github.com/karthikgarikina/zero-downtime-blue-green-deployment-system
 cd zero-downtime-blue-green-deployment-system
 ```
 
@@ -132,7 +132,9 @@ Steps:
 ------------------------------------------------------------------------
 
 ## Video demo
+https://www.youtube.com/watch?v=FkyzuRvlfwk
 
+-------------------------------------------------------------------------
 
 ## 🧠 Key Design Decisions
 
